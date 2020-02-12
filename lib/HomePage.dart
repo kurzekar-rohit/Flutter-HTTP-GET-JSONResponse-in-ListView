@@ -62,16 +62,55 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Text(
-                                  usersData[index]['name']['first'] +
-                                      " " +
-                                      usersData[index]['name']['last'],
-                                  style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(Icons.person),
+                                    Text(
+                                      usersData[index]['name']['first'] +
+                                          " " +
+                                          usersData[index]['name']['last'],
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
                                 ),
-                                Text("Phone: ${usersData[index]['phone']}"),
-                                Text("Gender: ${usersData[index]['gender']}"),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(Icons.phone),
+                                    Text(
+                                      "${usersData[index]['phone']}",
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(Icons.wc),
+                                    Text(
+                                      "${usersData[index]['gender']}",
+                                    ),
+                                  ],
+                                ),
+                                // Expanded(
+                                  // child:
+                                   Row(
+                                    children: <Widget>[
+                                      Icon(Icons.email),
+                                      Text(
+                                        "${usersData[index]['email']}", overflow: TextOverflow.ellipsis,
+                                         
+                                      ),
+                                    ],
+                                  ),
+                                // ),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(Icons.date_range),
+                                    Text(
+                                      "${usersData[index]['dob']['age']}",
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           )
